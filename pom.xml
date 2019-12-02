@@ -11,6 +11,9 @@
     <modules>
         <module>01_Iterator</module>
         <module>02_Adapter</module>
+        <module>03_TemplateMethod</module>
+        <module>04_FactoryMethod</module>
+        <module>06_Prototype</module>
     </modules>
 
     <dependencies>
@@ -33,6 +36,12 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.6.0-M1</version>
             <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.6</version>
         </dependency>
 
     </dependencies>
