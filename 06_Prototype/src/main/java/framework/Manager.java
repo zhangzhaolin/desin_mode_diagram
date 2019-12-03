@@ -10,8 +10,9 @@ public class Manager {
         showcase.put(name, product);
     }
 
-    public Product create(String protoname) throws CloneNotSupportedException {
-        return showcase.get(protoname).getInstance();
+    public Product create(String name) throws CloneNotSupportedException {
+        return showcase.get(name).createClone();
     }
+
 
 }

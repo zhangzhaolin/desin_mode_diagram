@@ -3,7 +3,9 @@ package idcard;
 import framework.Factory;
 import framework.Product;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class CardFactory extends Factory {
 

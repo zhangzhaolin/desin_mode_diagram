@@ -1,21 +1,16 @@
 import framework.Manager;
-import framework.Product;
 
 public class Main {
 
     public static void main(String[] args) throws CloneNotSupportedException {
         Manager manager = new Manager();
-        manager.register("strong message", new UnderlinePan('~'));
-        manager.register("waring box", new MessageBox('*'));
-        manager.register("slash box", new MessageBox('/'));
+        manager.register("u1", new UnderLinePen('~'));
+        manager.register("m1", new MessageBox('*'));
+        manager.register("m2", new MessageBox('/'));
 
-        Product p1 = manager.create("strong message");
-        p1.use("Hello , World!");
-        Product p2 = manager.create("waring box");
-        p2.use("Hello , World!");
-        Product p3 = manager.create("slash box");
-        p3.use("Hello , World!");
-
+        manager.create("m1").use("Hello World!");
+        manager.create("m2").use("Hello World!");
+        manager.create("u1").use("Hello");
     }
 
 }

@@ -1,7 +1,6 @@
 package idcard;
 
 import framework.Product;
-import lombok.Data;
 import lombok.Getter;
 
 import java.util.Objects;

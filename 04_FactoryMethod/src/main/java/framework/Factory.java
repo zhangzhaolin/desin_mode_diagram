@@ -2,7 +2,7 @@ package framework;
 
 public abstract class Factory {
 
-    public Product create(String owner) {
+    public final Product create(String owner) {
         Product product = createProduct(owner);
         registerProduct(product);
         return product;
