@@ -1,0 +1,31 @@
+@startuml
+
+skinparam handwritten true
+
+Client --> Target : uses >
+
+interface Target{
+    + targetMethod1()
+    + targetMethod2()
+}
+
+class Adapter{
+    + targetMethod1()
+    + targetMethod2()
+}
+
+class Adaptee{
+    methodA()
+    methodB()
+    methodC()
+}
+
+Adapter .left.|> Target : > implements
+
+Adapter -right-|> Adaptee : > extends
+
+legend right
+    类适配器模式（使用继承）
+endlegend
+
+@enduml

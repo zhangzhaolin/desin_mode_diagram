@@ -1,8 +1,11 @@
 @startuml
+
+skinparam handwritten true
+
 together {
 
    interface Aggregate{
-        + iterator()
+        + Iterator iterator()
    }
 
    interface Iterator<T>{
@@ -12,13 +15,15 @@ together {
 
 }
 
+note top of Aggregate : 集合，用于创建Iterator迭代器接口
+
 Aggregate -right-> Iterator : Creates ▶
 
 together {
 
     class BookShelf implements Aggregate{
 
-        + iterator()
+        + BookIterator iterator()
 
     }
 
@@ -30,8 +35,13 @@ together {
 
 }
 
+note bottom of BookShelf : 会创建出具体的Iterator角色
 
-BookIterator -left-o BookShelf
-' BookShelf --> BookIterator : Creates ▶
+BookShelf o-left- BookIterator
+
+note bottom of BookIterator
+    具体的迭代器，
+    包含了遍历集合所必须的信息（bookShelf）
+end note
 
 @enduml
