@@ -1,6 +1,12 @@
 @startuml
 
 skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    适配器模式（基于类）
+end title
 
 Client --> Target : uses >
 
