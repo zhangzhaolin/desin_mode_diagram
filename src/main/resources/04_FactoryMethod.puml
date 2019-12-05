@@ -1,0 +1,51 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+
+title
+    工厂模式
+end title
+
+package "框架" #FFCC99{
+
+    abstract Creator{
+        + Product create()
+        # Product factoryMethod()
+    }
+
+    interface Product{
+        + method1()
+        + method2()
+        + method3()
+    }
+
+    Creator -right-> Product : create >
+
+}
+
+package "具体加工" #FFCC99{
+
+    class ConcreteCreator extends Creator{
+        # Product factoryMethod()
+    }
+
+    class ConcreteProduct extends Product{
+        + method1()
+        + method2()
+        + method3()
+    }
+
+    ConcreteCreator -right-> ConcreteProduct : create >
+}
+
+Main --> Creator
+
+note right on link
+    客户端将会调用框架Creator中的的create()方法来生成Product
+    而create()方法的实现是使用factoryMethod()生成Product
+end note
+
+@enduml
