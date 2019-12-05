@@ -11,17 +11,17 @@ public class StringDisplay extends AbstractDisplay {
     }
 
     @Override
-    public void open() {
+    protected void open() {
         printLine();
     }
 
     @Override
-    public void print() {
+    protected void print() {
         System.out.println("|" + str + "|");
     }
 
     @Override
-    public void close() {
+    protected void close() {
         printLine();
     }
 
