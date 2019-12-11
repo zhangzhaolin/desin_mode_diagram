@@ -1,0 +1,27 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+
+title
+    原型模式
+end title
+
+
+Client -> Prototype : Uses >
+
+abstract class Prototype implements Cloneable{
+
+    # createClone()
+
+}
+
+class ConcretePrototype extends Prototype{
+
+    # createClone()
+
+}
+
+@enduml

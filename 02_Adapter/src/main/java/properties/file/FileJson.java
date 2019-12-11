@@ -3,6 +3,7 @@ package properties.file;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
@@ -21,10 +22,10 @@ public class FileJson implements FileIo {
 
     @Override
     public void readFromFile(String filepath) throws IOException {
-        InputStreamReader streamReader = new InputStreamReader(new FileInputStream(filepath), StandardCharsets.UTF_8);
-        data = new Gson().fromJson(streamReader, new TypeToken<HashMap<String, String>>() {
+        InputStreamReader input = new InputStreamReader(new FileInputStream(filepath), StandardCharsets.UTF_8);
+        data = new Gson().fromJson(input, new TypeToken<HashMap<String, String>>() {
         }.getType());
-        streamReader.close();
+        input.close();
     }
 
     @Override

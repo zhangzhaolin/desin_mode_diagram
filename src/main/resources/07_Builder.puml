@@ -1,0 +1,51 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+
+title
+    建造者模式
+end title
+
+class Director{
+    - Builder builder
+    + construct()
+}
+
+Director -|> Builder : has >
+
+Client -> Director : Uses >
+
+abstract class Builder{
+
+    buildPart1()
+    buildPart2()
+    buildPart3()
+
+}
+
+class ConcreteBuilder extends Builder{
+
+    buildPart1()
+    buildPart2()
+    buildPart3()
+    getResult()
+
+}
+
+Client -> ConcreteBuilder : Uses >
+
+note right of Builder : 定义用于生成实例的接口（API）
+note right of ConcreteBuilder
+    负责实现Builder角色的接口（API）的类
+    此外，在ConcreteBuilder中还定义了获取最终生成结果的方法
+end note
+
+note top of Director
+    Director角色负责使用Builder角色的接口（API）来生成实例
+    construct()方法<b>只调用在Builder中被定义的方法</b>
+end note
+
+@enduml

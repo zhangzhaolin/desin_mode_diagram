@@ -1,0 +1,42 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+
+title
+    建造者模式（时序图）
+end title
+
+participant Client
+participant Director
+participant ConcreteBuilder
+
+Client -> ConcreteBuilder : new
+return
+
+Client -> Director : construct()
+activate Director
+
+Director -> ConcreteBuilder : buildPart1()
+activate ConcreteBuilder
+return
+
+Director -> ConcreteBuilder : buildPart2()
+activate ConcreteBuilder
+return
+
+Director -> ConcreteBuilder : buildPart3()
+activate ConcreteBuilder
+return
+
+return
+deactivate Director
+
+Client -> ConcreteBuilder : getResult()
+activate ConcreteBuilder
+return
+deactivate ConcreteBuilder
+
+@enduml
