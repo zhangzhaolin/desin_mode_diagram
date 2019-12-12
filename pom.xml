@@ -15,6 +15,7 @@
         <module>04_FactoryMethod</module>
         <module>06_Prototype</module>
         <module>07_Builder</module>
+        <module>08_AbstractFactory</module>
     </modules>
 
     <dependencies>

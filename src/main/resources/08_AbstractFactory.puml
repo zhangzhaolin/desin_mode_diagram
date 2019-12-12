@@ -1,0 +1,75 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    抽象工厂模式
+end title
+
+package factory {
+
+    abstract class AbstractFactory{
+        + createProduct1()
+        + createProduct2()
+        + createProduct3()
+    }
+
+    abstract class AbstractProduct1{
+        + executeA()
+        + executeB()
+    }
+
+    abstract class AbstractProduct2{
+        + doA()
+        + doB()
+    }
+
+    abstract class AbstractProduct3{
+        + performOne()
+        + performTwo()
+    }
+
+    AbstractFactory -up-> AbstractProduct1 : create >
+    AbstractFactory -up-> AbstractProduct2 : create >
+    AbstractFactory -up-> AbstractProduct3 : create >
+}
+
+
+package concretefactory {
+
+    class ConcreteFactory extends AbstractFactory{
+        + createProduct1()
+        + createProduct2()
+        + createProduct3()
+    }
+
+    class ConcreteProduct1 extends AbstractProduct1{
+        + executeA()
+        + executeB()
+    }
+
+
+    class ConcreteProduct2 extends AbstractProduct2{
+        + doA()
+        + doB()
+    }
+
+
+    class ConcreteProduct3 extends AbstractProduct3{
+        + performOne()
+        + performTwo()
+    }
+
+    ConcreteFactory -up-> ConcreteProduct1 : use >
+    ConcreteFactory -up-> ConcreteProduct2 : use >
+    ConcreteFactory -up-> ConcreteProduct3 : use >
+
+}
+
+note bottom of AbstractFactory
+    用于生成抽象产品的接口
+end note
+
+@enduml
