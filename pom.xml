@@ -16,6 +16,7 @@
         <module>06_Prototype</module>
         <module>07_Builder</module>
         <module>08_AbstractFactory</module>
+        <module>09_Bridge</module>
     </modules>
 
     <dependencies>

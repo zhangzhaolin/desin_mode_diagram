@@ -1,0 +1,44 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    桥梁模式
+end title
+
+package "类的功能层次结构"{
+    class AbstractClass{
+        - Implementor impl
+        + method1()
+        + method2()
+        + method3()
+    }
+
+    class RefinedAbstractClass extends AbstractClass{
+        + refinedMethodA()
+        + refinedMethodB()
+    }
+}
+
+package "类的实现层次结构"{
+    interface Implementor{
+        + implMethodX()
+        + implMethodY()
+    }
+
+    class ConcreteImplementor implements Implementor{
+        + implMethodX()
+        + implMethodY()
+    }
+}
+
+AbstractClass -left-o Implementor : use >
+
+legend right
+    类的功能层次结构：在子类中新增新的功能（方法）
+    类的实现层次结构：在父类定义API，在子类中实现
+endlegend
+
+@enduml
