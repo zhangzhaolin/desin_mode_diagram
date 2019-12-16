@@ -1,0 +1,30 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    策略者模式
+end title
+
+interface Strategy{
+    + strategyMethod()
+}
+
+class ConcreteStrategy1 implements Strategy{
+    + strategyMethod()
+}
+
+class ConcreteStrategy2 implements Strategy{
+    + strategyMethod()
+}
+
+class Context{
+    - Strategy strategy
+    + contextMethod()
+}
+
+Context -left-o Strategy
+
+@enduml
