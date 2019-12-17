@@ -18,6 +18,7 @@
         <module>08_AbstractFactory</module>
         <module>09_Bridge</module>
         <module>10_Strategy</module>
+        <module>11_Composite</module>
     </modules>
 
     <dependencies>

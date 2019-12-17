@@ -1,0 +1,47 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    组合模式
+end title
+
+Client -right-> Component : use >
+
+abstract class Component{
+
+    method1()
+    method2()
+    add()
+    remove()
+    getChild()
+
+}
+
+class Leaf extends Component{
+    method1()
+    method2()
+}
+
+class Composite extends Component{
+    List<Component> children
+    method1()
+    method2()
+    add()
+    remove()
+    getChild()
+}
+
+Composite --o Component
+
+note right of Component : 使Leaf角色和Composite角色具有一致性的角色。
+note bottom of Leaf : 表示“内容”的角色。在该对象中不能放入其他对象。
+note bottom of Composite : 表示容器的角色。在其中可以放入Leaf角色和Composite角色。
+
+legend right
+    创建出递归结构的模式就是组合（Composite）模式
+endlegend
+
+@enduml
