@@ -1,0 +1,40 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    装饰者模式
+end title
+
+abstract class Component{
+    method1()
+    method2()
+    method3()
+}
+
+class ConcreteComponent extends Component{
+    method1()
+    method2()
+    method3()
+}
+
+abstract class Decorator extends Component{
+    protected Component component
+}
+
+Decorator --o Component
+
+class ConcreteDecorator extends Decorator{
+    method1()
+    method2()
+    method3()
+}
+
+legend right
+  Decorator模式虽然于Composite模式一样，都具有递归结构。
+  但是Decorator的目的是通过添加装饰物来增加对象的功能。
+endlegend
+
+@enduml

@@ -19,6 +19,7 @@
         <module>09_Bridge</module>
         <module>10_Strategy</module>
         <module>11_Composite</module>
+        <module>12_Decorator</module>
     </modules>
 
     <dependencies>
