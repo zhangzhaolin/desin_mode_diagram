@@ -1,0 +1,45 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    访问者模式
+end title
+
+
+interface Visitor{
+    visit(ConcreteElementA)
+    visit(ConcreteElementB)
+}
+
+class ConcreteVisitor implements Visitor{
+    visit(ConcreteElementA)
+    visit(ConcreteElementB)
+}
+
+interface Element{
+    accept()
+}
+
+class ConcreteElementA implements Element{
+    accept()
+}
+
+class ConcreteElementB implements Element{
+    accept()
+}
+
+class ObjectStructure{
+    iterator()
+}
+
+ObjectStructure -left-|> Element
+
+legend right
+  Visitor的目的是将处理从数据结构中分离出来。
+endlegend
+
+
+@enduml

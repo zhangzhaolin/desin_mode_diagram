@@ -11,12 +11,13 @@ public class Main {
     }
 
     private static Entry getEntry(java.io.File file) {
-        Entry result = new Directory(file.getName());
         if (file.isFile()) {
-            result.add(new File(file.getName(), (int) file.length()));
+            return new File(file.getName(), (int) file.length());
         } else {
-            Arrays.stream(Objects.requireNonNull(file.listFiles())).forEach(item -> result.add(getEntry(item)));
+            Directory dictionary = new Directory(file.getName());
+            Arrays.stream(Objects.requireNonNull(file.listFiles())).forEach(item -> dictionary.add(getEntry(item)));
+            return dictionary;
         }
-        return result;
+
     }
 }
