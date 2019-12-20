@@ -21,6 +21,7 @@
         <module>11_Composite</module>
         <module>12_Decorator</module>
         <module>13_Visitor</module>
+        <module>14_ChainOfResponsibility</module>
     </modules>
 
     <dependencies>

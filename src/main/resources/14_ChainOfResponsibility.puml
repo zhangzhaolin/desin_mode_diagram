@@ -1,0 +1,33 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    责任链模式
+end title
+
+
+class Client{
+}
+
+class Handler{
+
+    Handler next
+    request()
+
+}
+
+Client -r-|> Handler : Request >
+
+Handler --o Handler
+
+class ConcreteHandler1 extends Handler{
+    request()
+}
+
+class ConcreteHandler2 extends Handler{
+    request()
+}
+@enduml
