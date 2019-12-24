@@ -1,0 +1,43 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    观察者模式
+end title
+
+class Subject{
+
+    List<Observer> observers
+
+    void addObserver(Observer observer)
+    void deleteObserver(Observer observer)
+    ▶ void notifyObservers()
+    getSubjectStatus()
+
+}
+
+class ConcreteSubject extends Subject{
+
+    getSubjectStatus()
+
+}
+
+Subject -right-> Observer : Notifies >
+
+interface Observer{
+    void update(Subject subject)
+}
+
+class ConcreteObserver implements Observer{
+    void update(Subject subject)
+}
+
+note bottom of ConcreteSubject
+    当自身状态发生变化时
+    它会通知所有已经注册的Observer角色
+end note
+
+@enduml

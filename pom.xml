@@ -24,6 +24,7 @@
         <module>14_ChainOfResponsibility</module>
         <module>15_Facade</module>
         <module>16_Mediator</module>
+        <module>17_Observer</module>
     </modules>
 
     <dependencies>
