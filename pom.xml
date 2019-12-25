@@ -25,6 +25,7 @@
         <module>15_Facade</module>
         <module>16_Mediator</module>
         <module>17_Observer</module>
+        <module>18_Memento</module>
     </modules>
 
     <dependencies>

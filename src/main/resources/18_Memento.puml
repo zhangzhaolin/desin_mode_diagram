@@ -1,0 +1,63 @@
+@startuml
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    备忘录模式
+end title
+
+class Caretaker{
+
+}
+
+Caretaker -right-|> Originator : Request >
+
+class Originator{
+    Memento createMemento()
+    void restoreMemento()
+}
+
+Originator --> Memento : Create >
+
+class Memento{
+    <<wide interface>>
+    ~ getProtectedInfo()
+    --
+    <<narrow interface>>
+    + getPublicInfo()
+}
+
+Caretaker --o Memento
+
+note right of Memento
+    wide interface :
+        宽接口：
+        用于获取对象状态信息的方法。
+        由于宽接口会暴露所有Memento角色的内部信息，
+        因此能够使用宽接口的只有Originator角色
+    narrow interface :
+        窄接口
+        通过窄接口获取到的Memento信息非常有限
+end note
+
+note left of Caretaker
+    负责人
+    ---
+    当Caretaker想要保存当前的的Originator时，
+    会通知Originator角色。
+    Originator角色在接收到通知后，
+    会生成Memento角色实例并返回给Caretaker。
+    ---
+    Caretaker只能使用Memento角色中的窄接口，
+    无法访问其内部所有信息
+end note
+
+note right of Originator
+    在保存自己的最新状态时生成Memento角色。
+    ---
+    当把以前保存到Memento传递给Originator时，
+    会恢复至生成该Memento角色时的状态。
+end note
+
+@enduml
