@@ -1,0 +1,31 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    享元模式
+end title
+
+class Flyweight{
+    methodA()
+    methodB()
+}
+
+class FlyweightFactory{
+    private Map pool
+    Flyweight getFlyweight()
+}
+
+FlyweightFactory --o Flyweight : create >
+
+class Client{
+
+}
+
+Client --> FlyweightFactory : use >
+
+Client --> Flyweight : use >
+
+@enduml

@@ -26,6 +26,8 @@
         <module>16_Mediator</module>
         <module>17_Observer</module>
         <module>18_Memento</module>
+        <module>19_State</module>
+        <module>20_Flyweight</module>
     </modules>
 
     <dependencies>

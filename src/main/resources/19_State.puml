@@ -1,0 +1,44 @@
+@startuml
+
+skinparam handwritten true
+skinparam titleBorderThickness 2
+skinparam titleBackgroundColor AliceBlue
+
+title
+    状态模式
+end title
+
+class Context{
+    State state
+    requestX()
+    requestY()
+    requestZ()
+}
+
+Context -left-o State
+State --o Context
+
+abstract class State{
+
+    Context context
+
+    methodA()
+    methodB()
+    methodC()
+    methodD()
+}
+
+class ConcreteStateA extends State{
+    methodA()
+    methodB()
+    methodC()
+    methodD()
+}
+
+class ConcreteStateB extends State{
+    methodA()
+    methodB()
+    methodC()
+    methodD()
+}
+@enduml

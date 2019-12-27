@@ -20,11 +20,11 @@ class ConcreteStrategy2 implements Strategy{
     + strategyMethod()
 }
 
-class Context{
+class framework.Context{
     - Strategy strategy
     + contextMethod()
 }
 
-Context -left-o Strategy
+framework.Context -left-o Strategy
 
 @enduml
